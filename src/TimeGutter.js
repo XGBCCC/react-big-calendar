@@ -37,6 +37,7 @@ export default class TimeGutter extends Component {
 
   render() {
     const { resource, components, getters, calendarChildren } = this.props
+    console.log('calendarChildren:', calendarChildren)
 
     return (
       <div className="rbc-time-gutter rbc-time-column">
