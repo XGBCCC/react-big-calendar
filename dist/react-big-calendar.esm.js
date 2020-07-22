@@ -4447,7 +4447,8 @@ var TimeGrid =
         min = _this$props3.min,
         max = _this$props3.max,
         showMultiDayTimes = _this$props3.showMultiDayTimes,
-        longPressThreshold = _this$props3.longPressThreshold
+        longPressThreshold = _this$props3.longPressThreshold,
+        children = _this$props3.children
       width = width || this.state.gutterWidth
       var start = range[0],
         end = range[range.length - 1]
@@ -4524,7 +4525,8 @@ var TimeGrid =
             getters: getters,
           }),
           this.renderEvents(range, rangeEvents, getNow())
-        )
+        ),
+        children
       )
     }
 
