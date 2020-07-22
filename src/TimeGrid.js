@@ -164,6 +164,7 @@ export default class TimeGrid extends Component {
       max,
       showMultiDayTimes,
       longPressThreshold,
+      children,
     } = this.props
 
     width = width || this.state.gutterWidth
@@ -244,6 +245,7 @@ export default class TimeGrid extends Component {
           />
           {this.renderEvents(range, rangeEvents, getNow())}
         </div>
+        {children}
       </div>
     )
   }
