@@ -14060,7 +14060,6 @@
           components = _this$props3.components,
           getters = _this$props3.getters,
           calendarChildren = _this$props3.calendarChildren
-        console.log('calendarChildren:', calendarChildren)
         return React__default.createElement(
           'div',
           {
@@ -14691,7 +14690,7 @@
               components: components,
               className: 'rbc-time-gutter',
               getters: getters,
-              calendarChildren: true,
+              calendarChildren: calendarChildren,
             }),
             this.renderEvents(range, rangeEvents, getNow())
           )
