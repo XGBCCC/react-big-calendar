@@ -114,6 +114,7 @@ class DayColumn extends React.Component {
       resource,
       accessors,
       localizer,
+      calendarChildren,
       getters: { dayProp, ...getters },
       components: { eventContainerWrapper: EventContainer, ...components },
     } = this.props
@@ -170,6 +171,7 @@ class DayColumn extends React.Component {
             style={{ top: `${this.state.timeIndicatorPosition}%` }}
           />
         )}
+        {calendarChildren}
       </div>
     )
   }

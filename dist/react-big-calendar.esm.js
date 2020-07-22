@@ -3705,6 +3705,7 @@ var DayColumn =
         resource = _this$props3.resource,
         accessors = _this$props3.accessors,
         localizer = _this$props3.localizer,
+        calendarChildren = _this$props3.calendarChildren,
         _this$props3$getters = _this$props3.getters,
         dayProp = _this$props3$getters.dayProp,
         getters = _objectWithoutPropertiesLoose(_this$props3$getters, [
@@ -3795,7 +3796,8 @@ var DayColumn =
             style: {
               top: this.state.timeIndicatorPosition + '%',
             },
-          })
+          }),
+        calendarChildren
       )
     }
 
@@ -3911,8 +3913,7 @@ var TimeGutter =
       var _this$props3 = this.props,
         resource = _this$props3.resource,
         components = _this$props3.components,
-        getters = _this$props3.getters,
-        calendarChildren = _this$props3.calendarChildren
+        getters = _this$props3.getters
       return React.createElement(
         'div',
         {
@@ -3927,8 +3928,7 @@ var TimeGutter =
             renderSlot: _this2.renderSlot,
             getters: getters,
           })
-        }),
-        calendarChildren
+        })
       )
     }
 
@@ -4397,7 +4397,8 @@ var TimeGrid =
         components = _this$props2.components,
         accessors = _this$props2.accessors,
         localizer = _this$props2.localizer,
-        dayLayoutAlgorithm = _this$props2.dayLayoutAlgorithm
+        dayLayoutAlgorithm = _this$props2.dayLayoutAlgorithm,
+        calendarChildren = _this$props2.calendarChildren
       var resources = this.memoizedResources(this.props.resources, accessors)
       var groupedEvents = resources.groupEvents(events)
       return resources.map(function(_ref, i) {
@@ -4427,6 +4428,7 @@ var TimeGrid =
               date: date,
               events: daysEvents,
               dayLayoutAlgorithm: dayLayoutAlgorithm,
+              calendarChildren: calendarChildren,
             })
           )
         })
@@ -4449,8 +4451,7 @@ var TimeGrid =
         min = _this$props3.min,
         max = _this$props3.max,
         showMultiDayTimes = _this$props3.showMultiDayTimes,
-        longPressThreshold = _this$props3.longPressThreshold,
-        calendarChildren = _this$props3.calendarChildren
+        longPressThreshold = _this$props3.longPressThreshold
       width = width || this.state.gutterWidth
       var start = range[0],
         end = range[range.length - 1]
@@ -4525,7 +4526,6 @@ var TimeGrid =
             components: components,
             className: 'rbc-time-gutter',
             getters: getters,
-            calendarChildren: calendarChildren,
           }),
           this.renderEvents(range, rangeEvents, getNow())
         )
