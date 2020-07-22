@@ -14058,7 +14058,8 @@
         var _this$props3 = this.props,
           resource = _this$props3.resource,
           components = _this$props3.components,
-          getters = _this$props3.getters
+          getters = _this$props3.getters,
+          calendarChildren = _this$props3.calendarChildren
         return React__default.createElement(
           'div',
           {
@@ -14073,7 +14074,8 @@
               renderSlot: _this2.renderSlot,
               getters: getters,
             })
-          })
+          }),
+          calendarChildren
         )
       }
 
@@ -14613,7 +14615,7 @@
           max = _this$props3.max,
           showMultiDayTimes = _this$props3.showMultiDayTimes,
           longPressThreshold = _this$props3.longPressThreshold,
-          children = _this$props3.children
+          calendarChildren = _this$props3.calendarChildren
         width = width || this.state.gutterWidth
         var start = range[0],
           end = range[range.length - 1]
@@ -14688,10 +14690,10 @@
               components: components,
               className: 'rbc-time-gutter',
               getters: getters,
+              calendarChildren: true,
             }),
             this.renderEvents(range, rangeEvents, getNow())
-          ),
-          children
+          )
         )
       }
 
