@@ -13855,7 +13855,6 @@
           resource = _this$props3.resource,
           accessors = _this$props3.accessors,
           localizer = _this$props3.localizer,
-          calendarChildren = _this$props3.calendarChildren,
           _this$props3$getters = _this$props3.getters,
           dayProp = _this$props3$getters.dayProp,
           getters = _objectWithoutPropertiesLoose(_this$props3$getters, [
@@ -13946,8 +13945,7 @@
               style: {
                 top: this.state.timeIndicatorPosition + '%',
               },
-            }),
-          calendarChildren
+            })
         )
       }
 
@@ -14562,8 +14560,7 @@
           components = _this$props2.components,
           accessors = _this$props2.accessors,
           localizer = _this$props2.localizer,
-          dayLayoutAlgorithm = _this$props2.dayLayoutAlgorithm,
-          calendarChildren = _this$props2.calendarChildren
+          dayLayoutAlgorithm = _this$props2.dayLayoutAlgorithm
         var resources = this.memoizedResources(this.props.resources, accessors)
         var groupedEvents = resources.groupEvents(events)
         return resources.map(function(_ref, i) {
@@ -14593,7 +14590,6 @@
                 date: date,
                 events: daysEvents,
                 dayLayoutAlgorithm: dayLayoutAlgorithm,
-                calendarChildren: calendarChildren,
               })
             )
           })
@@ -14616,7 +14612,8 @@
           min = _this$props3.min,
           max = _this$props3.max,
           showMultiDayTimes = _this$props3.showMultiDayTimes,
-          longPressThreshold = _this$props3.longPressThreshold
+          longPressThreshold = _this$props3.longPressThreshold,
+          calendarChildren = _this$props3.calendarChildren
         width = width || this.state.gutterWidth
         var start = range[0],
           end = range[range.length - 1]
@@ -14692,7 +14689,8 @@
               className: 'rbc-time-gutter',
               getters: getters,
             }),
-            this.renderEvents(range, rangeEvents, getNow())
+            this.renderEvents(range, rangeEvents, getNow()),
+            calendarChildren
           )
         )
       }

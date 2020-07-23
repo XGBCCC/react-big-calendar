@@ -112,7 +112,6 @@ export default class TimeGrid extends Component {
       accessors,
       localizer,
       dayLayoutAlgorithm,
-      calendarChildren,
     } = this.props
 
     const resources = this.memoizedResources(this.props.resources, accessors)
@@ -142,7 +141,6 @@ export default class TimeGrid extends Component {
             date={date}
             events={daysEvents}
             dayLayoutAlgorithm={dayLayoutAlgorithm}
-            calendarChildren={calendarChildren}
           />
         )
       })
@@ -166,6 +164,7 @@ export default class TimeGrid extends Component {
       max,
       showMultiDayTimes,
       longPressThreshold,
+      calendarChildren,
     } = this.props
 
     width = width || this.state.gutterWidth
@@ -245,6 +244,7 @@ export default class TimeGrid extends Component {
             getters={getters}
           />
           {this.renderEvents(range, rangeEvents, getNow())}
+          {calendarChildren}
         </div>
       </div>
     )
